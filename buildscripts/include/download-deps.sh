@@ -29,6 +29,7 @@ if [ ! -d ffmpeg ]; then
   git clone https://github.com/FFmpeg/FFmpeg.git -b $v_ffmpeg ffmpeg --depth 1
   cd ffmpeg
   git apply ../../patches/ffmpeg_force_mpegts.patch
+  git apply ../../patches/ffmpeg_mov_pos_reset.patch
   cd ..
 fi
 
