@@ -14,37 +14,37 @@ PREFIX = $(PREFIX_X86)
 endif
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libswresample
+LOCAL_MODULE := libswresample_mpv
 LOCAL_SRC_FILES := $(PREFIX)/lib/$(LOCAL_MODULE).so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libavutil
+LOCAL_MODULE := libavutil_mpv
 LOCAL_SRC_FILES := $(PREFIX)/lib/$(LOCAL_MODULE).so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libavcodec
+LOCAL_MODULE := libavcodec_mpv
 LOCAL_SRC_FILES := $(PREFIX)/lib/$(LOCAL_MODULE).so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libavformat
+LOCAL_MODULE := libavformat_mpv
 LOCAL_SRC_FILES := $(PREFIX)/lib/$(LOCAL_MODULE).so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libswscale
+LOCAL_MODULE := libswscale_mpv
 LOCAL_SRC_FILES := $(PREFIX)/lib/$(LOCAL_MODULE).so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libavfilter
+LOCAL_MODULE := libavfilter_mpv
 LOCAL_SRC_FILES := $(PREFIX)/lib/$(LOCAL_MODULE).so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libavdevice
+LOCAL_MODULE := libavdevice_mpv
 LOCAL_SRC_FILES := $(PREFIX)/lib/$(LOCAL_MODULE).so
 LOCAL_EXPORT_C_INCLUDES := $(PREFIX)/include
 include $(PREBUILT_SHARED_LIBRARY)
@@ -75,6 +75,6 @@ LOCAL_SRC_FILES := \
 	event.cpp \
 	thumbnail.cpp
 LOCAL_LDLIBS    := -llog -lGLESv3 -lEGL -latomic
-LOCAL_SHARED_LIBRARIES := swscale avcodec mpv
+LOCAL_SHARED_LIBRARIES := swscale_mpv avcodec_mpv mpv
 
 include $(BUILD_SHARED_LIBRARY)

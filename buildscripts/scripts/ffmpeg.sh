@@ -30,6 +30,8 @@ args=(
 
 	--enable-{jni,mediacodec,mbedtls,libdav1d,libxml2} --disable-vulkan
 	--disable-static --enable-shared --enable-{gpl,version3}
+	# nombres propios (libavcodec_mpv.so...) para convivir en el APK con el FFmpeg de ffmpeg-kit
+	--build-suffix=_mpv
 
 	# disable unneeded parts
 	--disable-{stripping,doc,programs}
@@ -41,3 +43,8 @@ args=(
 
 make -j$cores
 make DESTDIR="$prefix_dir" install
+
+# mpv busca dependency('libavcodec') etc. sin sufijo: alias .pc que siguen enlazando las *_mpv
+for pc in "$prefix_dir"/lib/pkgconfig/lib*_mpv.pc; do
+	sed 's/^Name: \(.*\)_mpv$/Name: \1/' "$pc" > "${pc%_mpv.pc}.pc"
+done
