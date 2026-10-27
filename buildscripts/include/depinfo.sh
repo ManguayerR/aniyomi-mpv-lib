@@ -16,8 +16,8 @@ v_fribidi=1.0.16
 v_freetype=2-13-3
 v_mbedtls=3.6.2
 v_libxml2=2.13.5
-v_ffmpeg=n7.1
-v_mpv=d82701962f99051a18d65c215b70d41ebadd9a22
+v_ffmpeg=n8.1.3
+v_mpv=v0.41.0
 
 
 ## Dependency tree
@@ -41,7 +41,7 @@ dep_mpv_android=(mpv)
 ## for CI workflow
 
 # pinned ffmpeg revision
-v_ci_ffmpeg=n7.1
+v_ci_ffmpeg=n8.1.3
 
 # filename used to uniquely identify a build prefix
 ci_tarball="prefix-ndk-${v_ndk}-lua-${v_lua}-unibreak-${v_unibreak}-harfbuzz-${v_harfbuzz}-fribidi-${v_fribidi}-freetype-${v_freetype}-mbedtls-${v_mbedtls}-ffmpeg-${v_ci_ffmpeg}.tgz"
